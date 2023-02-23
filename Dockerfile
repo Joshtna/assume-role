@@ -1,5 +1,5 @@
 FROM openjdk:9
 WORKDIR /app
 COPY . /app
-RUN javac code.java
-ENTRYPOINT ["java", "code"]
+RUN javac Helloworld.java
+ENTRYPOINT ["java", "Helloworld"]
