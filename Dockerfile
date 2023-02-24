@@ -1,4 +1,4 @@
 FROM openjdk:9
 WORKDIR /
-ADD Helloworld.java Helloworld.jar
+ADD Helloworld.jar Helloworld.jar
 CMD ["java","-jar","Helloworld.jar"]
