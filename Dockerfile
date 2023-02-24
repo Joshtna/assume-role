@@ -1,4 +1,4 @@
 FROM openjdk:9
 WORKDIR /
-ADD Helloworld.jar Helloworld.jar
-CMD ["java","-jar","Helloworld.jar"]
+COPY Helloworld-1.0-SNAPSHOT.jar /Helloworld.jar
+CMD ["java","-jar","/Helloworld.jar"]
