@@ -1,65 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mkyong</groupId>
-    <artifactId>docker-java-app</artifactId>
-    <version>1.0</version>
-
-    <name>docker-java-app</name>
-    <url>https://www.mkyong.com</url>
-
-     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+    <groupId>zheng.demo</groupId>
+    <artifactId>springbootwebdemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springbootwebdemo</name>
+    <description>Demo project for Spring Boot</description>
+     
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+ 
+ 
+    <properties>
         <java.version>1.8</java.version>
-        <jsoup.version>1.12.1</jsoup.version>
-        <junit.version>5.4.0</junit.version>
     </properties>
-
-     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <java.version>1.8</java.version>
-        <jsoup.version>1.12.1</jsoup.version>
-        <junit.version>5.4.0</junit.version>
-    </properties>
-     <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.mkyong.App</mainClass>
-                            <classpathPrefix>lib/</classpathPrefix>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-
-            <!-- copy dependencies / jars to ${project.build.directory}/lib/ -->
+ 
+    <build>
+        <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                           <outputDirectory>
-                                ${project.build.directory}/lib/
-                            </outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
         </plugins>
     </build>
+ 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+ 
+ 
+ 
 </project>
-    
-
